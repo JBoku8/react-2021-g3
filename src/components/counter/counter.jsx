@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Greeting from "../greeting";
 import Button from "../ui/button";
 
@@ -6,6 +6,26 @@ import "./counter.css";
 
 function Counter() {
   const [count, setCount] = useState(0);
+  const [message, setMessage] = useState("");
+
+  useEffect(() => {
+    console.log("ყოველთვის კომპონენტის გადახატვისას...");
+  });
+
+  useEffect(() => {
+    // AJAX calls
+    console.log("ერთხელ კომპონენტის დახატვის შემდეგ...");
+  }, []);
+
+  useEffect(() => {
+    console.log("count-ზე დამოკიდებული");
+    setMessage(count * 10);
+  }, [count]);
+  // newValue !== oldValue => render
+
+  useEffect(() => {
+    console.log("message შემეცვალა");
+  }, [message]);
 
   const onButtonClick = (value) => {
     setCount(count + value);
@@ -15,6 +35,7 @@ function Counter() {
 
   return (
     <div className="row counter-container">
+      <span>Message - {message}</span>
       {showGreeting ? <Greeting text={`Counter ${count}`} /> : null}
       <div className="col-12 d-flex">
         <Button

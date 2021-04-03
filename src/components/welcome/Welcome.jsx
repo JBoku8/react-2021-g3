@@ -10,6 +10,7 @@ function Welcome({ color, message, className = "" }) {
       </div>
     );
   }
+  
   return (
     <div className="row">
       <h2 className={["welcome-title", className, `text-${color}`].join(" ")}>

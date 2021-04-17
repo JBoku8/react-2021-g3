@@ -1,14 +1,16 @@
-import NoteListItem from "./NoteListItem";
+import { useContext } from 'react';
 
-import "./note-list.css";
+import NoteListItem from './NoteListItem';
+import { NotesContext } from '../../../contexts/NotesProvider';
 
-function NoteList({ data, onItemClick }) {
+import './note-list.css';
+
+function NoteList(props) {
+  const { noteList } = useContext(NotesContext);
   return (
     <>
-      {data.map((item) => {
-        return (
-          <NoteListItem item={item} key={item.id} onItemClick={onItemClick} />
-        );
+      {noteList.map((item) => {
+        return <NoteListItem item={item} key={item.id} />;
       })}
     </>
   );

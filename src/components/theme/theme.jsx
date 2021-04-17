@@ -1,13 +1,13 @@
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
-import "./theme.css";
+import './theme.css';
 
-function Theme({ children, mode = "light" }) {
+function Theme({ children, mode = 'light' }) {
   return <div className={`p-3 bg-${mode}`}>{children}</div>;
 }
 
 Theme.propTypes = {
-  mode: PropTypes.oneOf(["classCounter", "homePage", "notesPages"]).isRequired,
+  mode: PropTypes.oneOf(['classCounter', 'homePage', 'notesPage']).isRequired,
 };
 
 export default Theme;

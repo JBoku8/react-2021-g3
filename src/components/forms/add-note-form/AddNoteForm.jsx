@@ -1,11 +1,15 @@
-import { useState } from "react";
+import { useState, useContext } from 'react';
 
-import Button from "../../ui/button";
+import Button from '../../ui/button';
 
-function AddNoteForm({ addNewNote }) {
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
+import { NotesContext } from '../../../contexts/NotesProvider';
+
+function AddNoteForm(props) {
+  const [title, setTitle] = useState('');
+  const [description, setDescription] = useState('');
   const [done, setDone] = useState(false);
+
+  const { addNewNote } = useContext(NotesContext);
 
   const onSubmit = (event) => {
     event.preventDefault();
@@ -16,8 +20,8 @@ function AddNoteForm({ addNewNote }) {
       id: Math.random().toString(),
     };
     addNewNote(newNote);
-    setTitle("");
-    setDescription("");
+    setTitle('');
+    setDescription('');
   };
 
   return (
@@ -50,8 +54,7 @@ function AddNoteForm({ addNewNote }) {
           onChange={({ target }) => {
             setDescription(target.value);
           }}
-          required
-        ></textarea>
+          required></textarea>
       </div>
       <div className="mb-3 form-check">
         <input
@@ -66,11 +69,7 @@ function AddNoteForm({ addNewNote }) {
           Done
         </label>
       </div>
-      <Button
-        type="submit"
-        className="btn btn-primary btn-md"
-        text="Add Note"
-      />
+      <Button type="submit" className="btn btn-primary btn-md" text="Add Note" />
     </form>
   );
 }

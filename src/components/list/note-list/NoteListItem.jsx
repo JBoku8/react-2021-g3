@@ -1,4 +1,10 @@
-function NoteListItem({ item, onItemClick }) {
+import { useContext } from 'react';
+
+import { NotesContext } from '../../../contexts/NotesProvider';
+
+function NoteListItem({ item }) {
+  const { onItemClick } = useContext(NotesContext);
+
   const onClick = () => {
     onItemClick(item.id);
   };
@@ -6,17 +12,15 @@ function NoteListItem({ item, onItemClick }) {
   return (
     <div
       className={`card note-list-item text-white ${
-        item.done ? "bg-danger" : "bg-primary"
-      }`}
-    >
+        item.done ? 'bg-danger' : 'bg-primary'
+      }`}>
       <div className="card-body">
         <h5 className="card-title">{item.title}</h5>
         <p className="card-text">{item.description}</p>
         <button
-          className={`btn ${item.done ? "btn-warning" : "btn-danger"}`}
-          onClick={onClick}
-        >
-          {item.done ? "REMOVE" : "DONE"}
+          className={`btn ${item.done ? 'btn-warning' : 'btn-danger'}`}
+          onClick={onClick}>
+          {item.done ? 'REMOVE' : 'DONE'}
         </button>
       </div>
     </div>

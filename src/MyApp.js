@@ -1,24 +1,26 @@
-import HomePage from "./pages/home-page";
-import NotesPage from "./pages/notes-page/notes-page";
-import Navigation from "./components/navigation";
+import { useState } from 'react';
 
-import "./App.css";
-import { useState } from "react";
-import ClassCounter from "./pages/class-counter/class-counter";
-import Theme from "./components/theme";
+import HomePage from './pages/home-page';
+import NotesPage from './pages/notes-page/notes-page';
+import Navigation from './components/navigation';
+
+import ClassCounter from './pages/class-counter';
+import Theme from './components/theme';
+
+import './App.css';
 
 function MyApp() {
   const [page, setPage] = useState({
     homePage: false,
-    notesPage: false,
-    classCounter: true,
+    notesPage: true,
+    classCounter: false,
   });
 
-  const [currentPage, setCurrentPage] = useState("classCounter");
+  const [currentPage, setCurrentPage] = useState('notesPage');
 
   const updatePage = (pageKey) => {
     const updateActivePage = { ...page };
-    let newCurrentPage = "";
+    let newCurrentPage = '';
 
     Object.keys(updateActivePage).forEach((key) => {
       if (key === pageKey) {

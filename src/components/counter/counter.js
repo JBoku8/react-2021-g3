@@ -1,30 +1,30 @@
-import { useState, useEffect } from "react";
-import Greeting from "../greeting";
-import Button from "../ui/button";
+import { useState, useEffect } from 'react';
+import Greeting from '../greeting';
+import Button from '../ui/button';
 
-import "./counter.css";
+import './counter.css';
 
 function Counter() {
   const [count, setCount] = useState(0);
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState('');
 
   useEffect(() => {
-    console.log("ყოველთვის კომპონენტის გადახატვისას...");
+    // console.log("ყოველთვის კომპონენტის გადახატვისას...");
   });
 
   useEffect(() => {
     // AJAX calls
-    console.log("ერთხელ კომპონენტის დახატვის შემდეგ...");
+    // console.log("ერთხელ კომპონენტის დახატვის შემდეგ...");
   }, []);
 
   useEffect(() => {
-    console.log("count-ზე დამოკიდებული");
+    // console.log("count-ზე დამოკიდებული");
     setMessage(count * 10);
   }, [count]);
   // newValue !== oldValue => render
 
   useEffect(() => {
-    console.log("message შემეცვალა");
+    // console.log('message შემეცვალა');
   }, [message]);
 
   const onButtonClick = (value) => {

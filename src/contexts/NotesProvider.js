@@ -14,17 +14,7 @@ function NotesProviderComponent({ children }) {
     setNoteList(list);
   };
 
-  // useEffect(() => {
-  //   API_SERVICE.getTodoList({ callback: setNoteList, start: 50, limit: 15 });
-  // }, []);
-
   useEffect(() => {
-    // IIFE
-    // (async () => {
-    //   const list = await API_SERVICE.getTodoListAsync({ start: 60, limit: 20 });
-    //   setNoteList(list);
-    // })();
-
     loadTodoListAsync();
   }, []);
 

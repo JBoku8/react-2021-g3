@@ -40,6 +40,15 @@ function Navigation(props) {
             Profile
           </NavLink>
         </li>
+
+        <li className="nav-item">
+          <NavLink
+            className="nav-link"
+            to="/auth"
+            activeClassName={css['active-class']}>
+            AuthPage
+          </NavLink>
+        </li>
       </ul>
     </div>
   );

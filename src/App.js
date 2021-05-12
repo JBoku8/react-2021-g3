@@ -4,6 +4,7 @@ import HomePage from './pages/home-page';
 import NotesPage from './pages/notes-page/notes-page';
 import ClassCounter from './pages/class-counter';
 import Profile from './pages/profile';
+import AuthPage from './pages/auth';
 
 import Navigation from './components/navigation';
 import Theme from './components/theme';
@@ -26,6 +27,10 @@ function App() {
 
           <Route path="/profile">
             <Profile title="Secured Profile Page" />
+          </Route>
+
+          <Route path="/auth">
+            <AuthPage />
           </Route>
 
           <Route path="/">

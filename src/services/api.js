@@ -1,8 +1,6 @@
-const baseUrl = 'https://jsonplaceholder.typicode.com';
-
 export class API_SERVICE {
   static getTodoList({ callback, start = 30, limit = 10 }) {
-    const url = `${baseUrl}/todos?_start=${start}&_limit=${limit}`;
+    const url = `${process.env.REACT_APP_API_URL}/todos?_start=${start}&_limit=${limit}`;
 
     fetch(url)
       .then((response) => response.json())
@@ -21,7 +19,7 @@ export class API_SERVICE {
   }
 
   static async getTodoListAsync({ start = 30, limit = 10 }) {
-    const url = `${baseUrl}/todos?_start=${start}&_limit=${limit}`;
+    const url = `${process.env.REACT_APP_API_URL}/todos?_start=${start}&_limit=${limit}`;
 
     try {
       const response = await fetch(url);

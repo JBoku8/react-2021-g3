@@ -21,6 +21,9 @@ function Theme({ children, mode = 'bg-light' }) {
       case '/profile':
         theme = css.bgProfile;
         break;
+      case '/faker-texts':
+        theme = 'bg-light';
+        break;
       default:
         theme = css.bgHome;
     }

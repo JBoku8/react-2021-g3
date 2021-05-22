@@ -35,6 +35,15 @@ function Navigation(props) {
         <li className="nav-item">
           <NavLink
             className="nav-link"
+            to="/faker-texts"
+            activeClassName={css['active-class']}>
+            Faker texts
+          </NavLink>
+        </li>
+
+        <li className="nav-item">
+          <NavLink
+            className="nav-link"
             to="/profile"
             activeClassName={css['active-class']}>
             Profile

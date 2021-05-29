@@ -4,7 +4,7 @@ import Button from '../../ui/button';
 
 import { NotesContext } from '../../../contexts/NotesProvider';
 
-function AddNoteForm(props) {
+function AddNoteForm() {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [done, setDone] = useState(false);

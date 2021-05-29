@@ -2,7 +2,7 @@ import AddNoteForm from '../../components/forms/add-note-form';
 import NoteList from '../../components/list/note-list';
 import NotesProviderComponent from '../../contexts/NotesProvider';
 
-function NotesPage(props) {
+function NotesPage() {
   return (
     <NotesProviderComponent>
       <div className="row">

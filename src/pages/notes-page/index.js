@@ -1,2 +1,1 @@
-import NotesPage from "./index";
-export default NotesPage;
+export { default } from './notes-page';

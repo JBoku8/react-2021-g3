@@ -1,8 +1,12 @@
+import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import { authSelector } from '../../redux/selectors';
 
 import css from './navigation.module.css';
 
-function Navigation(props) {
+function Navigation() {
+  const authorized = useSelector(authSelector);
+
   return (
     <div className="row mt-5 mb-3">
       <ul className="nav nav-pills">
@@ -44,20 +48,33 @@ function Navigation(props) {
         <li className="nav-item">
           <NavLink
             className="nav-link"
-            to="/profile"
+            to="/redux-counter"
             activeClassName={css['active-class']}>
-            Profile
+            Redux Counter
           </NavLink>
         </li>
 
-        <li className="nav-item">
-          <NavLink
-            className="nav-link"
-            to="/auth"
-            activeClassName={css['active-class']}>
-            AuthPage
-          </NavLink>
-        </li>
+        {authorized && (
+          <li className="nav-item">
+            <NavLink
+              className="nav-link"
+              to="/profile"
+              activeClassName={css['active-class']}>
+              Profile
+            </NavLink>
+          </li>
+        )}
+
+        {!authorized && (
+          <li className="nav-item">
+            <NavLink
+              className="nav-link"
+              to="/auth"
+              activeClassName={css['active-class']}>
+              AuthPage
+            </NavLink>
+          </li>
+        )}
       </ul>
     </div>
   );

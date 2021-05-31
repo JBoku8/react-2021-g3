@@ -7,9 +7,11 @@ export class API_SERVICE {
       .then((result) => {
         callback(
           result.map((item) => {
-            item.done = item.completed;
-            delete item.completed;
-            return item;
+            const d = {
+              ...item,
+              done: item.completed,
+            };
+            return d;
           })
         );
       })
@@ -26,14 +28,17 @@ export class API_SERVICE {
       const result = await response.json();
 
       const modified = result.map((item) => {
-        item.done = item.completed;
-        delete item.completed;
-        return item;
+        const d = {
+          ...item,
+          done: item.completed,
+        };
+        return d;
       });
       return modified;
     } catch (err) {
       console.log(err);
     }
+    return undefined;
   }
 }
 

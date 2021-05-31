@@ -13,4 +13,7 @@ export const getFakerTexts = async ({ quantity = 3, characters = 250 }) => {
     console.trace(error);
     console.groupEnd();
   }
+  return undefined;
 };
+
+export const getDemo = () => {};

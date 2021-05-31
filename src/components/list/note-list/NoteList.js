@@ -9,9 +9,9 @@ function NoteList(props) {
   const { noteList } = useContext(NotesContext);
   return (
     <>
-      {noteList.map((item) => {
-        return <NoteListItem item={item} key={item.id} />;
-      })}
+      {noteList.map((item) => (
+        <NoteListItem item={item} key={item.id} />
+      ))}
     </>
   );
 }

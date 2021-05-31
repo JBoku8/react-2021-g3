@@ -24,9 +24,9 @@ const textReducer = (state, action) => {
         oldTexts: [...action.payload],
       };
     case SET_FILTER:
-      const filtered = state.texts.filter((text) => {
-        return text.title.toLowerCase().includes(action.payload.toLowerCase());
-      });
+      const filtered = state.texts.filter((text) =>
+        text.title.toLowerCase().includes(action.payload.toLowerCase())
+      );
       return {
         ...state,
         filter: action.payload,
@@ -91,20 +91,18 @@ function FakerTexts() {
         />
       </div>
       <div className="border col-12 pt-3 pb-4 shadow row m-0 justify-content-center">
-        {state.texts.map((item) => {
-          return (
-            <div
-              className="card p-1 mx-1 mb-2"
-              key={item.author}
-              style={{ maxWidth: '18rem' }}>
-              <h2 className="card-title text-center">{item.title}</h2>
-              <h4 className="text-muted">
-                {item.author}, <small>{item.genre}</small>
-              </h4>
-              <div className="card-body">{item.content}</div>
-            </div>
-          );
-        })}
+        {state.texts.map((item) => (
+          <div
+            className="card p-1 mx-1 mb-2"
+            key={item.author}
+            style={{ maxWidth: '18rem' }}>
+            <h2 className="card-title text-center">{item.title}</h2>
+            <h4 className="text-muted">
+              {item.author}, <small>{item.genre}</small>
+            </h4>
+            <div className="card-body">{item.content}</div>
+          </div>
+        ))}
       </div>
     </div>
   );

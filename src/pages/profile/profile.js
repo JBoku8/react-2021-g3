@@ -6,8 +6,8 @@ import { setAuthGuestAction } from '../../redux/actions';
 import { logOut } from '../../services';
 
 import css from './profile.module.css';
-
-function Profile(props) {
+// eslint-disable-next-line
+function Profile({ title = '' }) {
   const history = useHistory();
   const dispatch = useDispatch();
 
@@ -21,10 +21,10 @@ function Profile(props) {
 
   return (
     <div className={classNames('row mt-3 p-3', css.profile)}>
-      <button className="btn btn-light btn-lg mb-3" onClick={onLogOut}>
+      <button type="button" className="btn btn-light btn-lg mb-3" onClick={onLogOut}>
         Log Out
       </button>
-      <h2 className={classNames(css.title)}>{props.title}</h2>
+      <h2 className={classNames(css.title)}>{title}</h2>
     </div>
   );
 }

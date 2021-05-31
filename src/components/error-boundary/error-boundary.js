@@ -1,17 +1,20 @@
-import React from "react";
+import React from 'react';
 
-import "./styles.css";
+import './styles.css';
+
 class ErrorBoundary extends React.Component {
   state = {
     error: null,
     errorInfo: null,
   };
+
   componentDidCatch(error, errorInfo) {
     this.setState({
       error,
       errorInfo,
     });
   }
+
   render() {
     const { errorInfo, error } = this.state;
     if (errorInfo) {
@@ -24,7 +27,7 @@ class ErrorBoundary extends React.Component {
             </h3>
           </div>
           <div className="row">
-            <details style={{ whiteSpace: "pre-wrap" }}>
+            <details style={{ whiteSpace: 'pre-wrap' }}>
               {error && error.toString()}
               <br />
               {errorInfo.componentStack}

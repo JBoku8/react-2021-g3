@@ -1,58 +1,58 @@
-import React from "react";
-import PropTypes from "prop-types";
-import Button from "../../components/ui/button";
+import React from 'react';
+import PropTypes from 'prop-types';
+import Button from '../../components/ui/button';
 
 export class ClassCounter extends React.Component {
   state = {
     count: 0,
-    prevTitle: "",
+    prevTitle: '',
   };
 
   componentDidMount() {
+    const { initialValue, title } = this.props;
     this.setState({
-      count: this.props.initialValue,
+      count: initialValue,
       prevTitle: document.title,
     });
 
-    document.title = this.props.title;
+    document.title = title;
   }
 
   componentWillUnmount() {
-    console.log("componentWillUnmount");
+    console.log('componentWillUnmount');
+    // eslint-disable-next-line
     document.title = this.state.prevTitle;
   }
 
-  onIncrement = (event) => {
-    this.setState((prevState) => {
-      return {
-        ...prevState,
-        count: prevState.count + 1,
-      };
-    });
+  onIncrement = () => {
+    this.setState((prevState) => ({
+      ...prevState,
+      count: prevState.count + 1,
+    }));
   };
 
-  onDecrement = (event) => {
-    this.setState((prevState) => {
-      return {
-        ...prevState,
-        count: prevState.count - 1,
-      };
-    });
+  onDecrement = () => {
+    this.setState((prevState) => ({
+      ...prevState,
+      count: prevState.count - 1,
+    }));
   };
 
-  onReset = (event) => {
-    this.setState({
-      ...this.state,
+  onReset = () => {
+    this.setState((prevState) => ({
+      ...prevState,
       count: 0,
-    });
+    }));
   };
 
   render() {
+    const { title } = this.props;
+    const { count } = this.state;
     return (
       <div className="row mt-3 mb-3">
-        <h3>{this.props.title}</h3>
+        <h3>{title}</h3>
         <hr />
-        <h4>Counted - {this.state.count}</h4>
+        <h4>Counted - {count}</h4>
         <div className="row">
           <Button
             type="button"
@@ -82,7 +82,7 @@ export class ClassCounter extends React.Component {
 
 ClassCounter.propTypes = {
   title: PropTypes.string.isRequired,
-  initialValue: PropTypes.number,
+  initialValue: PropTypes.number.isRequired,
 };
 
 export default ClassCounter;

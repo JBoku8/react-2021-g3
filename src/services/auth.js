@@ -13,6 +13,7 @@ export const login = async (credentials) => {
     console.error('[login] error');
     console.trace(error);
   }
+  return undefined;
 };
 
 export const register = async (credentials) => {
@@ -30,6 +31,7 @@ export const register = async (credentials) => {
     console.error('[register] error');
     console.trace(error);
   }
+  return undefined;
 };
 
 export const logOut = async () => {

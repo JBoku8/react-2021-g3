@@ -1,7 +1,7 @@
-import "./welcome.css";
+import './welcome.css';
 
-function Welcome({ color, message, className = "" }) {
-  const colors = ["red", "greenSea", "carrot", "wetAsphalt"];
+function Welcome({ color, message, className = '' }) {
+  const colors = ['red', 'greenSea', 'carrot', 'wetAsphalt'];
 
   if (!colors.includes(color)) {
     return (
@@ -10,10 +10,10 @@ function Welcome({ color, message, className = "" }) {
       </div>
     );
   }
-  
+
   return (
     <div className="row">
-      <h2 className={["welcome-title", className, `text-${color}`].join(" ")}>
+      <h2 className={['welcome-title', className, `text-${color}`].join(' ')}>
         {message}
       </h2>
     </div>

@@ -54,7 +54,8 @@ function AddNoteForm() {
           onChange={({ target }) => {
             setDescription(target.value);
           }}
-          required></textarea>
+          required
+        />
       </div>
       <div className="mb-3 form-check">
         <input

@@ -15,3 +15,5 @@ export const withAuthProtected = (Component) => {
 
   return WithAuthProtected;
 };
+
+export default withAuthProtected;

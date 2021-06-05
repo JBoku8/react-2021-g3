@@ -11,10 +11,10 @@ export const useLocalStorage = (key = '', initialValue = '') => {
   });
 
   const setLocalStorage = (newState) => {
-    const newValue = typeof newState === 'function' ? newState(state) : newState;
-    setState(newValue);
-    window.localStorage.setItem(key, JSON.stringify(newValue));
     try {
+      const newValue = typeof newState === 'function' ? newState(state) : newState;
+      setState(newValue);
+      window.localStorage.setItem(key, JSON.stringify(newValue));
     } catch (error) {
       console.error('unable to store value, reason: ', error.message);
     }

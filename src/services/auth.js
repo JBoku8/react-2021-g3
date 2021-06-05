@@ -1,3 +1,5 @@
+import { AUTH_TOKEN } from '../utils/constants';
+
 export const login = async (credentials) => {
   try {
     const response = await fetch(`${process.env.REACT_APP_AUTH_URL}/login`, {
@@ -35,5 +37,5 @@ export const register = async (credentials) => {
 };
 
 export const logOut = async () => {
-  localStorage.removeItem('auth.token');
+  localStorage.removeItem(AUTH_TOKEN);
 };

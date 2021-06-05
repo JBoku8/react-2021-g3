@@ -4,6 +4,7 @@ import { Link, Redirect, Route, Switch, useLocation } from 'react-router-dom';
 import SignIn from './sign-in';
 import SignUp from './sign-up';
 import { withNoAuthProtected } from '../../hoc';
+import { SIGN_IN_PATH, SIGN_UP_PATH } from '../../utils/routePaths';
 
 function AuthPage() {
   const { pathname } = useLocation();
@@ -13,18 +14,18 @@ function AuthPage() {
         <ul className="nav nav-pills nav-fill">
           <li className="nav-item">
             <Link
-              to="/auth/sign-in"
+              to={SIGN_IN_PATH}
               className={classNames('nav-link', {
-                active: pathname.includes('/sign-in'),
+                active: pathname.includes(SIGN_IN_PATH),
               })}>
               Sign In
             </Link>
           </li>
           <li className="nav-item">
             <Link
-              to="/auth/sign-up"
+              to={SIGN_UP_PATH}
               className={classNames('nav-link', {
-                active: pathname.includes('/sign-up'),
+                active: pathname.includes(SIGN_UP_PATH),
               })}>
               Sign up
             </Link>
@@ -34,13 +35,13 @@ function AuthPage() {
 
       <div className="row">
         <Switch>
-          <Route path="/auth/sign-in">
+          <Route path={SIGN_IN_PATH}>
             <SignIn />
           </Route>
-          <Route path="/auth/sign-up">
+          <Route path={SIGN_UP_PATH}>
             <SignUp />
           </Route>
-          <Redirect to="/auth/sign-in" />
+          <Redirect to={SIGN_IN_PATH} />
         </Switch>
       </div>
     </div>

@@ -1,6 +1,6 @@
 .active-class {
   background-color: teal !important;
-  color: #fff;
+  color: #fff !important;
 }
 
 .active-class:hover {

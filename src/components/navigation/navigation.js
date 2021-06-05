@@ -2,6 +2,8 @@ import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { authSelector } from '../../redux/selectors';
 
+import * as routes from '../../utils/routePaths';
+
 import css from './navigation.module.css';
 
 function Navigation() {
@@ -13,7 +15,7 @@ function Navigation() {
         <li className="nav-item">
           <NavLink
             className="nav-link"
-            to="/"
+            to={routes.HOME_PATH}
             exact
             activeClassName={css['active-class']}>
             Home Page
@@ -22,7 +24,7 @@ function Navigation() {
         <li className="nav-item">
           <NavLink
             className="nav-link"
-            to="/notes"
+            to={routes.NOTES_PATH}
             activeClassName={css['active-class']}>
             Notes Page
           </NavLink>
@@ -30,7 +32,7 @@ function Navigation() {
         <li className="nav-item">
           <NavLink
             className="nav-link"
-            to="/counter"
+            to={routes.COUNTER_PATH}
             activeClassName={css['active-class']}>
             Class Counter
           </NavLink>
@@ -39,7 +41,7 @@ function Navigation() {
         <li className="nav-item">
           <NavLink
             className="nav-link"
-            to="/faker-texts"
+            to={routes.FAKER_TEXT_PATH}
             activeClassName={css['active-class']}>
             Faker texts
           </NavLink>
@@ -48,7 +50,7 @@ function Navigation() {
         <li className="nav-item">
           <NavLink
             className="nav-link"
-            to="/redux-counter"
+            to={routes.REDUX_COUNTER_PATH}
             activeClassName={css['active-class']}>
             Redux Counter
           </NavLink>
@@ -58,7 +60,7 @@ function Navigation() {
           <li className="nav-item">
             <NavLink
               className="nav-link"
-              to="/profile"
+              to={routes.PROFILE_PATH}
               activeClassName={css['active-class']}>
               Profile
             </NavLink>
@@ -69,7 +71,7 @@ function Navigation() {
           <li className="nav-item">
             <NavLink
               className="nav-link"
-              to="/auth"
+              to={routes.AUTH_PATH}
               activeClassName={css['active-class']}>
               AuthPage
             </NavLink>

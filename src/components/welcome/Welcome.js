@@ -1,7 +1,7 @@
 import './welcome.css';
 
 function Welcome({ color, message, className = '' }) {
-  const colors = ['red', 'greenSea', 'carrot', 'wetAsphalt'];
+  const colors = ['red', 'greenSea', 'carrot', 'wetAsphalt', 'white'];
 
   if (!colors.includes(color)) {
     return (

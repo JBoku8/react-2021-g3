@@ -5,6 +5,8 @@ const initialState = {
   message: 'ReactJS Redux!',
   error: null,
   auth: null,
+  loading: false,
+  books: [],
 };
 
 export const appReducer = (state = initialState, action) => {
@@ -38,6 +40,26 @@ export const appReducer = (state = initialState, action) => {
         auth: action.payload,
       };
 
+    // Books
+    case actionType.GET_BOOKS_REQUEST:
+      return {
+        ...state,
+        loading: true,
+      };
+    case actionType.GET_BOOKS_FAILURE:
+      return {
+        ...state,
+        loading: false,
+        books: [],
+        error: action.payload,
+      };
+    case actionType.GET_BOOKS_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        books: action.payload,
+        error: null,
+      };
     default:
       return state;
   }

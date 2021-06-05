@@ -1,22 +1,22 @@
 {
   "env": {
     "browser": true,
-    "commonjs": true,
-    "es6": true
+    "es2021": true,
+    "node": true
   },
-  "parser": "babel-eslint",
   "extends": [
-    "airbnb",
+    "plugin:react/recommended",
+    "standard",
     "prettier",
-    "eslint:recommended",
-    "plugin:react/recommended"
+    "plugin:import/errors",
+    "plugin:import/warnings"
   ],
-  "plugins": ["react", "prettier"],
+  "parser": "babel-eslint",
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
     },
-    "ecmaVersion": 11,
+    "ecmaVersion": 12,
     "sourceType": "module"
   },
   "settings": {
@@ -24,6 +24,7 @@
       "version": "detect"
     }
   },
+  "plugins": ["react", "prettier", "react-hooks"],
   "rules": {
     "prettier/prettier": "error",
     "no-unused-vars": "warn",
@@ -41,6 +42,11 @@
         "extensions": [".jsx", "jsx"]
       }
     ],
-    "react/jsx-props-no-spreading": "off"
+    "react/jsx-props-no-spreading": "off",
+    "react/prop-types": "off",
+    "import/named": 2,
+    "import/namespace": 2,
+    "import/default": 2,
+    "import/export": 2
   }
 }

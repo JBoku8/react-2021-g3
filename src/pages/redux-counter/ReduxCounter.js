@@ -5,7 +5,8 @@ import {
   addNumberAction,
   resetNumberAction,
   subtractNumberAction,
-} from '../../redux/actions/common-actions';
+  blockAction,
+} from '../../redux/actions';
 import {
   counterSelector,
   messageSelector,
@@ -52,11 +53,7 @@ function ReduxCounter() {
         <button
           type="button"
           className="btn btn-warning"
-          onClick={() =>
-            dispatch({
-              type: 'BLOCKED_ACTION',
-            })
-          }>
+          onClick={() => dispatch(blockAction())}>
           BLOCKED_ACTION - Action
         </button>
       </div>

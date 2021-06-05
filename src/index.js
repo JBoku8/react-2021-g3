@@ -6,6 +6,7 @@ import ErrorBoundary from './components/error-boundary';
 import App from './App';
 import rootStore from './redux/store';
 
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 
 ReactDOM.render(

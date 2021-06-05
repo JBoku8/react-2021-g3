@@ -24,6 +24,7 @@ const textReducer = (state, action) => {
         oldTexts: [...action.payload],
       };
     case SET_FILTER:
+      // eslint-disable-next-line
       const filtered = state.texts.filter((text) =>
         text.title.toLowerCase().includes(action.payload.toLowerCase())
       );

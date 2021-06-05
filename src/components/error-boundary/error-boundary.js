@@ -1,4 +1,5 @@
 import React from 'react';
+import { HOME_PATH } from '../../utils/routePaths';
 
 import './styles.css';
 
@@ -23,7 +24,7 @@ class ErrorBoundary extends React.Component {
           <div className="row">
             <h2 className="text-danger">Something went wrong.</h2>
             <h3 className="text-danger">
-              <a href="/">Home Page</a>
+              <a href={HOME_PATH}>Home Page</a>
             </h3>
           </div>
           <div className="row">

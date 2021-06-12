@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Counter from '../../components/counter';
-import Greeting from '../../components/greeting';
+// import Greeting from '../../components/greeting';
 import Welcome from '../../components/welcome';
 import { useFetch } from '../../hooks/useFetch';
 import { getBooksActionAsync } from '../../redux/actions/book-actions';

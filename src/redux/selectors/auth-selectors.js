@@ -1,3 +1,3 @@
-export const authSelector = (state) => state.auth;
+export const authSelector = ({ user: { auth } }) => auth;
 
 export default authSelector;

@@ -1,3 +1,13 @@
-export { appReducer } from './appReducer';
+import { combineReducers } from 'redux';
 
-export default {};
+import { booksReducer } from './booksReducer';
+import { counterReducer } from './counterReducer';
+import { userReducer } from './userReducer';
+
+const rootReducer = combineReducers({
+  counter: counterReducer,
+  books: booksReducer,
+  user: userReducer,
+});
+
+export default rootReducer;

@@ -25,5 +25,6 @@ describe('Greeting component test', () => {
 
     expect(titleElement).toBeInTheDocument();
     expect(titleElement).toHaveTextContent(mockProps.text);
+    expect(titleElement).toHaveAttribute('title', mockProps.text);
   });
 });

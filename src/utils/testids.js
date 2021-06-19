@@ -6,4 +6,8 @@ export const TEST_IDS = {
     message: 'loader.message',
   },
   button: 'button',
+  welcome: {
+    error: 'welcome.error',
+    title: 'welcome.title',
+  },
 };

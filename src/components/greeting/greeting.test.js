@@ -28,3 +28,20 @@ describe('Greeting component test', () => {
     expect(titleElement).toHaveAttribute('title', mockProps.text);
   });
 });
+
+describe('Greeting snapshots', () => {
+  it('renders successfully snap 1', () => {
+    const component = render(<Greeting />);
+
+    expect(component).toMatchSnapshot();
+  });
+
+  it('renders successfully snap 2', () => {
+    const mockProps = {
+      text: 'mock text',
+    };
+    const component = render(<Greeting {...mockProps} />);
+
+    expect(component).toMatchSnapshot();
+  });
+});

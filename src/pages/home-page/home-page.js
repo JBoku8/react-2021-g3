@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Counter from '../../components/counter';
+import ParentComponent from '../../components/perf-optimization/ParentComponent';
 // import Greeting from '../../components/greeting';
 import Welcome from '../../components/welcome';
 import { useFetch } from '../../hooks/useFetch';
@@ -41,6 +42,11 @@ function HomePage() {
   return (
     <div className="row">
       <h1 className="text-white">Home Page</h1>
+
+      <div className="col-12 shadow">
+        <ParentComponent />
+      </div>
+
       <Welcome message="Counter Welcome" color="wetAsphalt" />
       <Welcome
         color="white"
